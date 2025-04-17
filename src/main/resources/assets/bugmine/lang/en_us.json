@@ -31,7 +31,7 @@
   "bugmine.options.rabbitsSpawnsRabbits.name": "Rabbits Spawns Rabbits",
   "bugmine.options.rabbitsSpawnsRabbits.description": "Makes the \"Rabbits\" mine ingredient spawn rabbits instead of parrots.",
   "bugmine.options.witherSkeletonsNotZombifiedPiglins.name": "Wither Skeletons Not Zombified Piglins",
-  "bugmine.options.witherSkeletonsNotZombifiedPiglins.description": "Change the icon for the Wither Skeleton mine ingredient to a Wither Skeleton Spawn Egg, not a Zombified Piglin Spawn Egg.",
+  "bugmine.options.witherSkeletonsNotZombifiedPiglins.description": "Changes the icon for the Wither Skeleton mine ingredient to a Wither Skeleton Spawn Egg, not a Zombified Piglin Spawn Egg.",
   "bugmine.advancements.unlocks.in_it_together.description": "Complete a mine with the 'Soul Link' effect active",
   "unlocks.player.locked": "🔒 %s locked %s",
   "world.effect.locked": "Locked new Mine Ingredient: %s"
