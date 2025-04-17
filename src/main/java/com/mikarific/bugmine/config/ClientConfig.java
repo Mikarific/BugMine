@@ -24,6 +24,9 @@ public class ClientConfig {
     @SerialEntry
     public static boolean allowSoulLinkOnLanServers = FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT;
 
+    @SerialEntry
+    public static boolean witherSkeletonsNotZombifiedPiglins = true;
+
     public static void save() {
         HANDLER.save();
     }

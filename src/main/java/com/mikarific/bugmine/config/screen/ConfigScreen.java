@@ -52,6 +52,20 @@ public class ConfigScreen {
                                         .controller(TickBoxControllerBuilder::create)
                                         .build()
                                 )
+                                .option(Option.<Boolean>createBuilder()
+                                        .name(Text.translatable("bugmine.options.witherSkeletonsNotZombifiedPiglins.name"))
+                                        .description(OptionDescription.of(Text.translatable("bugmine.options.witherSkeletonsNotZombifiedPiglins.description")))
+                                        .binding(
+                                                ClientConfig.witherSkeletonsNotZombifiedPiglins,
+                                                () -> ClientConfig.witherSkeletonsNotZombifiedPiglins,
+                                                newVal -> {
+                                                    ClientConfig.witherSkeletonsNotZombifiedPiglins = newVal;
+                                                    ClientConfig.save();
+                                                }
+                                        )
+                                        .controller(TickBoxControllerBuilder::create)
+                                        .build()
+                                )
                                 .build()
                         )
                         .group(OptionGroup.createBuilder()

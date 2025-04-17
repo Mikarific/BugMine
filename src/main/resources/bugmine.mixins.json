@@ -9,6 +9,7 @@
     "fixes.EncoderHandlerMixin",
     "fixes.JsonDataLoaderMixin",
     "fixes.MineCrafterScreenHandlerMixin",
+    "fixes.MineIngredientItemModelMixin",
     "fixes.PlayerUnlocksMixin",
     "fixes.ServerPlayerEntityMixin",
     "fixes.ShieldItemMixin",
