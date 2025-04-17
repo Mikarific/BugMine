@@ -114,8 +114,8 @@ public class BugMineCommand {
 
         saveOption(option);
 
-        //noinspection resource
         if (FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER) {
+            //noinspection resource
             for (ServerPlayerEntity player : ServerNetworkingHandler.getPlayersWithClientMod(source.method_69818().getPlayerManager())) {
                 ServerPlayNetworking.send(player, new BugMineConfigPayloadS2C(option, parsedValue.toString()));
             }
