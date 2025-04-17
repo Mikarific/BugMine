@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 
 public class ConfigScreen {
     private static boolean isSingleplayerOrOp() {
@@ -73,7 +74,7 @@ public class ConfigScreen {
                                 .description(OptionDescription.of(Text.translatable("bugmine.group.server.description")))
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.translatable("bugmine.options.applyLevelBiomeTags.name"))
-                                        .description(OptionDescription.of(Text.translatable("bugmine.options.applyLevelBiomeTags.description")))
+                                        .description(OptionDescription.createBuilder().text(Text.translatable("bugmine.options.applyLevelBiomeTags.description")).image(new Identifier("bugmine", "textures/gui/config/images/apply_level_biome_tags.png"), 856, 124).build())
                                         .available(serverHasBugmine() && isSingleplayerOrOp())
                                         .binding(
                                                 ServerConfig.applyLevelBiomeTags,
@@ -130,7 +131,7 @@ public class ConfigScreen {
                                 )
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.translatable("bugmine.options.obtainableInItTogether.name"))
-                                        .description(OptionDescription.of(Text.translatable("bugmine.options.obtainableInItTogether.description")))
+                                        .description(OptionDescription.createBuilder().text(Text.translatable("bugmine.options.obtainableInItTogether.description")).image(new Identifier("bugmine", "textures/gui/config/images/obtainable_in_it_together.png"), 895, 257).build())
                                         .available(serverHasBugmine() && isSingleplayerOrOp())
                                         .binding(
                                                 ServerConfig.obtainableInItTogether,
@@ -149,7 +150,7 @@ public class ConfigScreen {
                                 )
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Text.translatable("bugmine.options.obtainableNoDrops.name"))
-                                        .description(OptionDescription.of(Text.translatable("bugmine.options.obtainableNoDrops.description")))
+                                        .description(OptionDescription.createBuilder().text(Text.translatable("bugmine.options.obtainableNoDrops.description")).image(new Identifier("bugmine", "textures/gui/config/images/obtainable_no_drops.png"), 887, 138).build())
                                         .available(serverHasBugmine() && isSingleplayerOrOp())
                                         .binding(
                                                 ServerConfig.obtainableNoDrops,
@@ -159,7 +160,7 @@ public class ConfigScreen {
                                                     if (isSingleplayerOrDisconnected()) {
                                                         ServerConfig.save();
                                                     } else {
-                                                        ClientPlayNetworking.send(new BugMineConfigPayloadC2S("obtainableInItTogether", newVal.toString()));
+                                                        ClientPlayNetworking.send(new BugMineConfigPayloadC2S("obtainableNoDrops", newVal.toString()));
                                                     }
                                                 }
                                         )
