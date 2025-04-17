@@ -115,8 +115,10 @@ public class BugMineCommand {
         saveOption(option);
 
         //noinspection resource
-        for (ServerPlayerEntity player : ServerNetworkingHandler.getPlayersWithClientMod(source.method_69818().getPlayerManager())) {
-            ServerPlayNetworking.send(player, new BugMineConfigPayloadS2C(option, parsedValue.toString()));
+        if (FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER) {
+            for (ServerPlayerEntity player : ServerNetworkingHandler.getPlayersWithClientMod(source.method_69818().getPlayerManager())) {
+                ServerPlayNetworking.send(player, new BugMineConfigPayloadS2C(option, parsedValue.toString()));
+            }
         }
         Object finalParsedValue = parsedValue;
         source.sendFeedback(() -> Text.literal("")
