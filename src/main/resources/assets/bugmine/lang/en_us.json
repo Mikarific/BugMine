@@ -10,6 +10,8 @@
   "bugmine.group.server.description": "Changes that apply to the server.",
   "bugmine.options.allowSoulLinkOnLanServers.name": "Allow Soul Link On LAN Servers",
   "bugmine.options.allowSoulLinkOnLanServers.description": "Allows the usage of Soul Link when your singleplayer world is open to LAN.",
+  "bugmine.options.applyLevelBiomeTags.name": "Apply Level Biome Tags",
+  "bugmine.options.applyLevelBiomeTags.description": "Adds biome tags to mine datapacks upon crafting the mine. This makes the \"Dry Land\" mine ingredient obtainable in normal mines, and makes structures able to spawn as intended.",
   "bugmine.options.functionalShields.name": "Functional Shields",
   "bugmine.options.functionalShields.description": "Restores the shield's ability to block attacks.",
   "bugmine.options.obtainableDragonFire.name": "Obtainable Dragon Fire",

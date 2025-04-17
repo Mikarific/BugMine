@@ -6,6 +6,7 @@
   "mixins": [
     "fixes.accessor.LevelPropertiesAccessor",
     "fixes.accessor.ServerPlayerEntityAccessor",
+    "fixes.DimensionGeneratorMixin",
     "fixes.EncoderHandlerMixin",
     "fixes.JsonDataLoaderMixin",
     "fixes.MineCrafterScreenHandlerMixin",

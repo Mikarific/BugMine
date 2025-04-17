@@ -72,6 +72,25 @@ public class ConfigScreen {
                                 .name(Text.translatable("bugmine.group.server.name"))
                                 .description(OptionDescription.of(Text.translatable("bugmine.group.server.description")))
                                 .option(Option.<Boolean>createBuilder()
+                                        .name(Text.translatable("bugmine.options.applyLevelBiomeTags.name"))
+                                        .description(OptionDescription.of(Text.translatable("bugmine.options.applyLevelBiomeTags.description")))
+                                        .available(serverHasBugmine() && isSingleplayerOrOp())
+                                        .binding(
+                                                ServerConfig.applyLevelBiomeTags,
+                                                () -> ServerConfig.applyLevelBiomeTags,
+                                                newVal -> {
+                                                    ServerConfig.applyLevelBiomeTags = newVal;
+                                                    if (isSingleplayerOrDisconnected()) {
+                                                        ServerConfig.save();
+                                                    } else {
+                                                        ClientPlayNetworking.send(new BugMineConfigPayloadC2S("applyLevelBiomeTags", newVal.toString()));
+                                                    }
+                                                }
+                                        )
+                                        .controller(TickBoxControllerBuilder::create)
+                                        .build()
+                                )
+                                .option(Option.<Boolean>createBuilder()
                                         .name(Text.translatable("bugmine.options.functionalShields.name"))
                                         .description(OptionDescription.of(Text.translatable("bugmine.options.functionalShields.description")))
                                         .available(serverHasBugmine() && isSingleplayerOrOp())
