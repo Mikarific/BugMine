@@ -22,6 +22,9 @@ public class ServerConfig {
             .build();
 
     @SerialEntry
+    public static boolean allowLevelDryLand = false;
+
+    @SerialEntry
     public static boolean applyLevelBiomeTags = true;
 
     @SerialEntry

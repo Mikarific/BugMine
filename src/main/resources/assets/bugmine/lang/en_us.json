@@ -8,6 +8,8 @@
   "bugmine.group.client.description": "Changes that apply to the client.",
   "bugmine.group.server.name": "Server-Side",
   "bugmine.group.server.description": "Changes that apply to the server.",
+  "bugmine.options.allowLevelDryLand.name": "Allow Level Dry Land",
+  "bugmine.options.allowLevelDryLand.description": "Allows level savanna biomes to trigger the unlock condition for the \"Dry Land\" mine ingredient. This option gets overwritten if you have \"applyLevelBiomeTags\" turned on, as biomes having the correct tag makes Dry Land obtainable in normal mines aswell. This option only exists for if you want \"Dry Land\" to be obtainable in normal mines, but don't want structures in normal mines.",
   "bugmine.options.allowSoulLinkOnLanServers.name": "Allow Soul Link On LAN Servers",
   "bugmine.options.allowSoulLinkOnLanServers.description": "Allows the usage of Soul Link when your singleplayer world is open to LAN.",
   "bugmine.options.applyLevelBiomeTags.name": "Apply Level Biome Tags",

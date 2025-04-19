@@ -73,6 +73,25 @@ public class ConfigScreen {
                                 .name(Text.translatable("bugmine.group.server.name"))
                                 .description(OptionDescription.of(Text.translatable("bugmine.group.server.description")))
                                 .option(Option.<Boolean>createBuilder()
+                                        .name(Text.translatable("bugmine.options.allowLevelDryLand.name"))
+                                        .description(OptionDescription.of(Text.translatable("bugmine.options.allowLevelDryLand.description")))
+                                        .available(serverHasBugmine() && isSingleplayerOrOp())
+                                        .binding(
+                                                ServerConfig.allowLevelDryLand,
+                                                () -> ServerConfig.allowLevelDryLand,
+                                                newVal -> {
+                                                    ServerConfig.allowLevelDryLand = newVal;
+                                                    if (isSingleplayerOrDisconnected()) {
+                                                        ServerConfig.save();
+                                                    } else {
+                                                        ClientPlayNetworking.send(new BugMineConfigPayloadC2S("allowLevelDryLand", newVal.toString()));
+                                                    }
+                                                }
+                                        )
+                                        .controller(TickBoxControllerBuilder::create)
+                                        .build()
+                                )
+                                .option(Option.<Boolean>createBuilder()
                                         .name(Text.translatable("bugmine.options.applyLevelBiomeTags.name"))
                                         .description(OptionDescription.createBuilder().text(Text.translatable("bugmine.options.applyLevelBiomeTags.description")).image(new Identifier("bugmine", "textures/gui/config/images/apply_level_biome_tags.png"), 856, 124).build())
                                         .available(serverHasBugmine() && isSingleplayerOrOp())
