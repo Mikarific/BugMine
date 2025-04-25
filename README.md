@@ -1,4 +1,4 @@
-![BugMine Icon](https://files.catbox.moe/waqlq8.png)
+![BugMine Icon](https://raw.githubusercontent.com/Mikarific/BugMine/refs/heads/main/assets/logo.webp)
 ### A collection of various bug fixes and QoL features for 25w14craftmine.
 
 ---
